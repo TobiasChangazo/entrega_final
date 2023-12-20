@@ -1,0 +1,18 @@
+{% extends "LibreVenta/base.html" %}
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h1>¡Cerraste sesión!</h1>
+                    <p>Esperamos verte pronto de nuevo en LibreVenta.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'LibreVenta/base.html' %}
+
+{% block contenido %}
+
+<main>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+       <div class="container px-5">
+           <div class="row gx-5 justify-content-center">
+               <div class="col-lg-6">
+                   <div class="text-center my-5">
+                       <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido a Libre Venta</h1>
+                       <p class="lead text-white-50 mb-4">¿Listo para encontrar lo que estas buscando?</p>                           
+                       <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                           <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'product-list'%}">Ver Productos</a>
+                           <a class="btn btn-outline-light btn-lg px-4" href="{% url 'product-create'%}">Agregar Productos</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+   
+
+   <!-- Features section-->
+   <section class="py-5 border-bottom" id="features">
+       <div class="container px-5 my-5">
+           <div class="row gx-5">
+               <div class="col-lg-4 mb-5 mb-lg-0">
+                   <h2 class="h4 fw-bolder">Variedad de Productos</h2>
+                   <p>En Libre Venta contamos con una gran variedad de productos de cualquier gama.</p>
+               </div>
+               <div class="col-lg-4 mb-5 mb-lg-0">
+                   <h2 class="h4 fw-bolder">Productos nuevos o usados</h2>
+                   <p>Aquí podrás encontrar productos de nuevos y también usados.</p>
+               </div>
+               <div class="col-lg-4">
+                   <h2 class="h4 fw-bolder">Personaliza tus productos.</h2>
+                   <p>En Libre Venta podrás agregar y actualizar todos tus productos.</p>
+               </div>
+           </div>
+       </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</main>
+
+{% endblock %}

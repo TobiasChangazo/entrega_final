@@ -1,0 +1,33 @@
+{% extends "LibreVenta/base.html" %}
+
+{% block contenido %}
+  <div class="container my-5">
+    <h1 class="text-center mb-5"> Lista de productos </h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% if not object_list %}
+        <h2 class="text-center">No hay productos aún.</h2>
+      {% endif %}
+
+      {% for product in object_list %}
+        <div class="col mb-4">
+          <div class="card shadow-sm h-100">
+            {% if product.imagen %}
+            <img class="card-img-top" src="{{product.image_url}}" style="height: 190px; width: 60%; display: block;" alt="{{product}}">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{product}}</h5>
+              <a href="{% url 'product-detail' product.id %}" class="btn btn-primary mt-2">Detalles</a>
+              {% if user.is_authenticated and product.publisher == user %}
+                <a href="{% url 'product-update' product.id %}" class="btn btn-secondary mt-2">Actualizar</a>
+                <a href="{% url 'product-delete' product.id %}" class="btn btn-danger mt-2">Borrar</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-dark">Volver</a>
+  </div>
+{% endblock %}
