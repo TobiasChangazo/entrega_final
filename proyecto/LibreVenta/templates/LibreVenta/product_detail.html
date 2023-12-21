@@ -11,16 +11,10 @@
       </div>
     {% endif %}
     <div class="col-md-6">
-      <p class="lead">Precio: {{object.precio}}</p>
+      <g6 class="lead">Precio: {{object.precio}}</p>
       <h6>Descripción</h6>
       <p>{{object.descripcion}}</p>
       <p>Estado: {{object.estado}}</p>
-      <h6>Lo que tenes que saber de este producto</h6>
-      <ul>
-        <li>{{object.item1}}</li>
-        <li>{{object.item2}}</li>
-        <li>{{object.item3}}</li>
-      </ul>
       <p>Creado el: {{object.creado_el}}</p>
       <a href="{% url 'product-list' %}" class="btn btn-dark">Volver</a>
     </div>

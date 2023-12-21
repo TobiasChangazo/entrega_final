@@ -25,7 +25,7 @@ class ProductDetail(DetailView):
 class ProductCreate(LoginRequiredMixin, CreateView):
     model = Product
     success_url = reverse_lazy("product-list")
-    fields = ['producto','precio','titulo', 'estado', 'descripcion', 'imagen', 'item1', 'item2', 'item3']
+    fields = ['producto','precio','titulo', 'estado', 'descripcion', 'imagen']
 
     def form_valid(self, form):
         form.instance.publisher = self.request.user
@@ -70,6 +70,7 @@ class Logout(LogoutView):
 
 class ProfileUpdate(UserPassesTestMixin, UpdateView):
     model = Profile
+    template_name = "LibreVenta/profile_update.html"
     success_url = reverse_lazy('home')
     fields = ['imagen', 'info']
     
@@ -122,7 +123,7 @@ class MensajeList(LoginRequiredMixin, ListView):
     
 class MensajeDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Mensaje
-    success_url = reverse_lazy("mensaje-list")
+    success_url = reverse_lazy("lista_mensajes")
 
     def test_func(self):
         user_id = self.request.user.id

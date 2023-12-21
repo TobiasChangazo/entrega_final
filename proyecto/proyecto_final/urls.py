@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="home"),
-    path('about/', about, name="about"),
+    path('about/', about, name="acerca_de_mi"),
     path('product/list', ProductList.as_view(), name="product-list"),
     path('product/<pk>/detail', ProductDetail.as_view(), name="product-detail"),
     path('product/create', ProductCreate.as_view(), name="product-create"),
@@ -32,12 +32,12 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name="signup"),
     path('login/', Login.as_view(), name="login"),
     path('logout/', Logout.as_view(), name="logout"),
-    path('profile/<pk>/update', ProfileUpdate.as_view(), name="profile-update"),
-    path('profile/create/', ProfileCreate.as_view(), name="profile_create"),
-    path('profile/<pk>/detail', ProfileDetail.as_view(), name="profile-detail"),
-    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create"),
+    path('profile/<pk>/update', ProfileUpdate.as_view(), name="actualizar_perfil"),
+    path('profile/create/', ProfileCreate.as_view(), name="crear_perfil"),
+    path('profile/<pk>/detail', ProfileDetail.as_view(), name="detalles_perfil"),
+    path('mensaje/create', MensajeCreate.as_view(), name="crear_mensaje"),
     path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
-    path('mensaje/list', MensajeList.as_view(), name="mensaje-list"),
+    path('mensaje/list', MensajeList.as_view(), name="lista_mensajes"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
