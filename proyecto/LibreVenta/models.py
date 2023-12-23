@@ -9,6 +9,9 @@ class Product(models.Model):
     descripcion = models.CharField(max_length=500)
     publisher = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="publisher")
     imagen = models.ImageField(upload_to="products", null=True, blank=True)
+    item1 = models.CharField(max_length=100)
+    item2 = models.CharField(max_length=100)
+    item3 = models.CharField(max_length=100)
     creado_el = models.DateTimeField(auto_now_add=True)
     
     def image_url(self):
